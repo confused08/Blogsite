@@ -31,13 +31,13 @@ export const Create = () => {
       newPost.photo = filename
 
       try {
-        await axios.post("/upload", data)
+        await axios.post(process.env.REACT_APP_API+"/upload", data)
       } catch (error) {
         console.log(error)
       }
     }
     try {
-      const res = await axios.post("/posts", newPost)
+      const res = await axios.post(process.env.REACT_APP_API+"/posts", newPost)
       window.location.replace("/post/" + res.data._id)
     } catch (error) {}
   }

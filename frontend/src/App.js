@@ -13,6 +13,7 @@ import { Context } from "./context/Context"
 const App = () => {
   //after login
   const { user } = useContext(Context)
+  console.log("hello"+process.env.REACT_APP_API)
   return (
     <>
       <Router>

@@ -18,7 +18,7 @@ export const DetailsPages = () => {
   const [post, setPost] = useState({})
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path)
+      const res = await axios.get(process.env.REACT_APP_API+"/posts/" + path)
       console.log(res)
       //setp 2
       setPost(res.data)
@@ -28,12 +28,12 @@ export const DetailsPages = () => {
 
   // step 3
   // file create garne time add garne
-  const PublicFlo = "http://localhost:5000/images/"
+  const PublicFlo = process.env.REACT_APP_API+"images/"
   const { user } = useContext(Context)
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, { data: { username: user.username } })
+      await axios.delete(`${process.env.REACT_APP_API}/posts/${post._id}`, { data: { username: user.username } })
       window.location.replace("/")
     } catch (error) {}
   }

@@ -13,7 +13,7 @@ export const Account = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [succ, setSucc] = useState(false)
-  const PublicFlo = "http://localhost:5000/images/"
+  const PublicFlo = process.env.REACT_APP_API+"/images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -33,13 +33,13 @@ export const Account = () => {
       updateUser.profilePic = filename
 
       try {
-        await axios.post("/upload", data)
+        await axios.post(process.env.REACT_APP_API+"/upload", data)
       } catch (error) {
         console.log(error)
       }
     }
     try {
-      const res = await axios.put("/users/" + user._id, updateUser)
+      const res = await axios.put(process.env.REACT_APP_API+"/users/" + user._id, updateUser)
       setSucc(true)
       dispatch({ type: "UPDATE_SUCC", payload: res.data })
       window.location.reload()

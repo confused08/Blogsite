@@ -14,11 +14,13 @@ export const Home = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const res = await axios.get("/posts" + search)
+      const res = await axios.get(process.env.REACT_APP_API+"/posts" + search)
       setPosts(res.data)
+      console.log(res.data)
     }
     fetchPost()
   }, [search])
+  console.log(process.env.REACT_APP_API)
   return (
     <>
       <Category />

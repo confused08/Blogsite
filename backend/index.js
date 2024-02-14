@@ -3,7 +3,8 @@ const express = require("express")
 const app = express()
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
-
+var cors = require('cors')
+app.use(cors())
 //---- step : 3
 const multer = require("multer")
 const path = require("path")
