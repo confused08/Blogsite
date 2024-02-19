@@ -1,0 +1,45 @@
+/* styles.css */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000001;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #22fb63;
+  }
+  

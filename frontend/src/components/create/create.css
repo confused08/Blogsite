@@ -9,6 +9,25 @@
   margin-right: 20px;
   margin-top: -20px;
 }
+
+.cat-div{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap:1rem;
+  padding: 2rem;
+}
+.non-sel-cat{
+  color: aliceblue;
+  padding: 0.2rem 0.2rem;
+  border-radius: 5px;
+  background-color: rgba(255, 237, 237, 0.72);
+}
+.sel-cat{
+  padding: 0.2rem 0.2rem;
+  border-radius: 2px;
+  background-color: rgb(20, 241, 167);
+}
 .newPost img {
   width: 100%;
   height: 300px;

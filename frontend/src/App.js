@@ -9,6 +9,11 @@ import { DetailsPages } from "./pages/details/DetailsPages"
 import { Account } from "./pages/account/Account"
 import { Create } from "./components/create/Create"
 import { Context } from "./context/Context"
+import CategoryPage from "./components/category/category-page"
+import AboutUs from "./pages/About"
+import { Card } from "./components/blog/Card"
+import { Blogs } from "./components/blog/Blogs"
+import Contact from "./pages/Contact"
 
 const App = () => {
   //after login
@@ -24,7 +29,11 @@ const App = () => {
           <Route exact path='/register' component={Regsiter} />
           <Route exact path='/post/:id' component={DetailsPages} />
           <Route exact path='/account' component={Account} />
+          <Route exact path='/category/:id' component={CategoryPage}/>
           <Route exact path='/create' component={Create} />
+          <Route exact  path='/about' component={AboutUs}/>
+          <Route exact path ='/blog' component={Blogs}/>
+          <Route exact path='/contact' component={Contact}/>
         </Switch>
         <Footer />
       </Router>

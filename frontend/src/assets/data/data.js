@@ -10,11 +10,6 @@ export const nav = [
     url: "/about",
   },
   {
-    id: 3,
-    text: "pages",
-    url: "/pages",
-  },
-  {
     id: 4,
     text: "blog",
     url: "/blog",

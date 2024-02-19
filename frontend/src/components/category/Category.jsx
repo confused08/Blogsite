@@ -9,6 +9,7 @@ import { MdNavigateNext } from "react-icons/md"
 import axios from "axios"
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 const SampleNextArrow = (props) => {
   const { onClick } = props
@@ -30,7 +31,7 @@ const SamplePrevArrow = (props) => {
     </div>
   )
 }
-export const Category = () => {
+export const Category = ({posts}) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -52,7 +53,14 @@ export const Category = () => {
 
   const [cats, setCat] = useState([])
   const { search } = useLocation()
-
+  const navigate  = useHistory();
+  console.log(posts)
+  const handleclick = (cat) =>{
+    
+    const catPosts = posts?.filter((x)=> x.categories.includes(cat))
+    console.log(catPosts)
+    navigate.push("/category/"+cat,{catPosts})
+  }
   useEffect(() => {
     const getCat = async () => {
       const res = await axios.get("/category" + search)
@@ -70,9 +78,9 @@ export const Category = () => {
                 <div className='box' key={item.id}>
                   <img src={item.cover} alt='cover' />
                   <div className='overlay'>
-                    <Link to={`/?cat=${item.name}`} className='link'>
-                      <h4>{item.category}</h4>
-                    </Link>
+                    {/* <Link to={`/category/${item.category}`} className='link'> */}
+                      <h4 onClick={()=>handleclick(item.category)}>{item.category}</h4>
+                    {/* </Link> */}
                     <p>{item.title}</p>
                   </div>
                 </div>

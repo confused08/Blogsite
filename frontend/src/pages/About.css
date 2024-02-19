@@ -1,0 +1,22 @@
+/* styles.css */
+
+/* Page container */
+.about-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Heading styles */
+  .about-us-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraph styles */
+  .about-us-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
