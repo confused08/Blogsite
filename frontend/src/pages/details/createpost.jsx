@@ -28,7 +28,7 @@ export const DetailsPages = () => {
 
   // step 3
   // file create garne time add garne
-  const PublicFlo = process.env.REACT_APP_API+"images/"
+  const PublicFlo = process.env.REACT_APP_API+"/images/"
   const { user } = useContext(Context)
 
   const handleDelete = async () => {
